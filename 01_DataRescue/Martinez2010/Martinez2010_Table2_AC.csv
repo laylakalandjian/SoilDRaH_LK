@@ -1,9 +1,9 @@
-﻿"Table 2. Decomposition rate (k) and weight loss (A) at 420 days for *Acacia caven* and *Lolium multiflorum* litter. De: degraded ecosystem; Pd: typical ecosystem; Wp: well preserved ecosystem; S1: site 1; S2: site 2; ± standard deviation; R2: regression coefficient; ns: non significant. Values with the same letters in the columns are not significant according to Tukey test (p < 0.05).
+"Table 2. Decomposition rate (k) and weight loss (A) at 420 days for *Acacia caven* and *Lolium multiflorum* litter. De: degraded ecosystem; Pd: typical ecosystem; Wp: well preserved ecosystem; S1: site 1; S2: site 2; ± standard deviation; R2: regression coefficient; ns: non significant. Values with the same letters in the columns are not significant according to Tukey test (p < 0.05).
  1This value indicates the applied model is not adequate for this site and condition since A > 100 ",,,,
-Ecosystem,Species,k (g d^(-1)),A (%),R^2
+Ecosystem,Species,k (g $d^{-1}$),A (%),$R^2$
 De - S1,*Acacia caven*,0.0065 ± 0.0016 ns,33.44 ± 3.31,0.61
-De - S2,*Acacia caven*,0.0006 ± 0.0014 ns,115.70 ± 242.50^1,0.53
-Pd - S1,*Acacia caven*,0.0012 ± 0.0010 ns,77.49 ± 53.06^1,0.68
+De - S2,*Acacia caven*,0.0006 ± 0.0014 ns,115.70 ± $242.50^1$,0.53
+Pd - S1,*Acacia caven*,0.0012 ± 0.0010 ns,77.49 ± $53.06^1$,0.68
 Pd - S2,*Acacia caven*,0.0162 ± 0.0035 ns,25.85 ± 1.19,0.66
 Wp - S1,*Acacia caven*,0.0030 ± 0.0014 ns,39.81 ± 11.42,0.54
 Wp - S2,*Acacia caven*,0.0429 ± 0.0229 ns,32.09 ± 1.29,0.62
