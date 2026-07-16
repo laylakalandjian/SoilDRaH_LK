@@ -1,5 +1,5 @@
 ---
-title: "Data Rescue: Author YYYY"
+title: "Data Rescue: Martinez 2010"
 format:
   html:
     toc: true
@@ -7,8 +7,8 @@ format:
 date: last-modified
 date-format: YYYY-MMMM
 bibliography:
-  - AuthorYYYY_Methods.bib #contains the citations in the methods section
-  - AuthorYYYY.bib #contains citation for the data source, generally a single citation of the primary paper
+  - Martinez2010_Methods.bib #contains the citations in the methods section
+  - Martinez2010.bib #contains citation for the data source, generally a single citation of the primary paper
 authors: #author scheme from https://quarto.org/docs/journals/authors.html
   - id: ktoddbrown #use the github name as an id
     name:
@@ -21,6 +21,14 @@ authors: #author scheme from https://quarto.org/docs/journals/authors.html
       - transcription: lead #secondary, review
       - standardization: lead #review
       - curation: lead #review
+  - id: laylakalandjian
+    name:
+      given: Layla
+      family: Kalandjian
+    affiliation:
+      - ref: uf-ees
+    role:
+      - transcription: Table 1, Figure 1
 
 affiliations:
   - id: uf-ees
@@ -83,17 +91,18 @@ library(kableExtra) # pretty tables
 library(bibtex) # reading in BibTex files to R
 
 # data files for level 0
-methods.file <- "AuthorYYYY_Methods.md"
-tableN.file <- 'AuthorYYYY_TableN.csv'
-figureM.file <- 'AuthorYYYY_FigureM.csv'
+methods.file <- "Martinez2010_Methods.md"
+table1.file <- 'Martinez2010_Table1.csv'
+table2.file <- 'Martinez2010_Table2.csv'
+figure1.file <- 'Martinez2010_Figure1.csv'
 
 # Bibliography files
-primaryCitation.file <- 'AuthorYYYY.bib'
-methodsCitation.file <- 'AuthorYYYY_Methods.bib'
+primaryCitation.file <- 'Martinez2010.bib'
+methodsCitation.file <- 'Martinez2010_Methods.bib'
 
 # read function; you will need to create this function after you have your data
 #... rescue reviewed and before you finish your data harmonization.
-readsource.file <- '../../02_DataHarmonization/readAuthorYYYY.R'
+readsource.file <- '../../02_DataHarmonization/readMartinez2010.R'
 if(file.exists(readsource.file)){
   source(readsource.file)
 }
@@ -109,54 +118,63 @@ is_type.file <- '../../semantics/SoilDRaHVocabulary_is_type.csv'
 
 <!---- Fill in the full citation here, generally found on the journal page and link in the issue that you started on GitHub. Though this is at the top of the document, this should be one of the last things you do because a lot of this will be a direct copy-paste into the issue template. --->
 
-> Full citation here, exact format does not matter but it should be complete enough to find the paper. Please include the doi
+Martínez G, Ingrid, Zagal V, Erick, Ovalle M, Carlos, Coûteaux, Marie-Madeleine, Stolpe, Neal B, & Valderrama V, Natalia. (2010). Litter Decomposition of Acacia caven (Molina) Molina and Lolium multiflorum Lam. in Mediterranean Climate Ecosystems. Chilean journal of agricultural research, 70(3), 454-464. https://dx.doi.org/10.4067/S0718-58392010000300013
 
-For the discussion of this data rescue see the Github issue: https://github.com/ktoddbrown/SoilDRaH/issues/#.
+For the discussion of this data rescue see the Github issue: https://github.com/ktoddbrown/SoilDRaH/issues/#259.
 
 <!--- After you read through the paper write a brief summary of what the study
 measured and what the data was used for in. This should be <250 words.--->
 
-AuthorYYYY primarily measures ... 
-They use this data to look at ...
+In this study, conducted in the Mediterranean ecosystems of central southern Chile, researchers aimed to evaluate litter decomposition of A. caven and Lolium multiflorum under different cover densities using litter bags stored in 1-m high cages.
 
 ## Tables and figures
 
 <!--- Write a brief discription of all the tables and figures in this source. This should include full variable names when possible. It is perfectly fine to restate the captions here or copy other text that feels complete. Please keep this to a single sentence for each table/figure.--->
 
-- Table 
-  1) Describe the data in the first table.
+Tables
+Table 1: Litter chemical composition of Acacia caven and Lolium multiflorum before field incubation.
+Table 2: Decomposition rate (k) and weight loss (A) at 420 days for Acacia caven and Lolium multiflorum litter.
+Table 3: Correlation matrix of principal components for Acacia caven and Lolium multiflorum.
 
-- Figure 
-  1)  Describe the data in the first figure
+Figures
+Figure 1: Weight loss as a percentage of initial weight for Acacia caven and Lolium multiflorum in a degraded ecosystem
+(De), typical ecosystem (Pd), and well preserved ecosystem (Wp) over 450 days.
+Figure 2: Two-dimensional graph for PC1 and PC2 of Acacia caven litter with the variables under study
+Figure 3: ANOVA (p < 0.001) for PC1 (a) and PC3 (b) factors for Acacia caven.
+Figure 4: ANOVA (p < 0.001) PC2 factor for Acacia caven.
+Figure 5: Two-dimensional graph for Lolium multiflorum, correlations of PC1 and PC2 principal components with each variable under study.
 
-## Fit for purpose: ProjectName
+## Fit for purpose: DeAD
 
 <!--- Write a brief discription of the project you are processing this data source for. This could be a copy-paste from other documentation. ---->
 
-This data is identified as a data source for PROJECT.
-The purpose of this PROJECT is...
+The Decomposition Across Drylands (DeAD) data collection is a new data effort targeting dryland decomposition studies. The purpose of this data collection is to develop better litter decay models for dryland ecosystems. This paper has been identified as a source for the information above.
 
 <!--- Include a list of the key variables identified for the project. This is used to identify the elements for the paper for the data rescue. An example is below for a basic geo-located soil carbon stock project. --->
 
-  - Location: The geo-location is given in the site description section of the methods. Both latitude and longitude are given but not the datum/projection that was used.
-  - Soil carbon stock: Soil carbon stock was calculated from organic carbon fraction and bulk density and is reported in table 3 across two treatments and one control. Coarse fraction was not reported and does not appear to be included.
+- Location: The study was carried out in the Cauquenes Experimental Centre of Instituto de Investigaciones Agropecuarias INIA (35°78’ S; 72°20’ W) located in the interior dryland of the Maule Region.
+- Duration: During 420 d and starting in April 2004 until August 2005.
+- Mass loss: Weight loss ranged from 31 to 52% in L. multiflorum and 26 to 40% in A. caven after 420 d. Specifics reported in figure 1 and table 2.
+Solar exposure: Three different cover densities: well preserved (Wp) 50 to 80%, typical (Pd) 25 to 50%, and degraded (De) with 10 to 25% cover.
   
 ## Files
 
 <!--- Include a brief explaination to all the files in the folder--->
 
-These files are in the AuthorYYYY data rescue.
+These files are in the Martinez2010 data rescue.
 
 - [Readme](README_AUTHORYYYY.qmd)
   + This is the primary file that documents the transcriptions and decision made during data rescue.
-- [AuthorYYYY.bib](AuthorYYYY.bib)
+- [Martinez2010.bib](Martinez2010.bib)
   + citation for article transcribed
-- [AuthorYYYY_Methods.bib](AuthorYYYY_Methods.bib)
+- [Martinez2010_Methods.bib](Martinez2010_Methods.bib)
   + citations for the methods section of the article
-- [AuthorYYYY_Methods.md](AuthorYYYY_Methods.md)
+- [Martinez2010_Methods.md](Martinez2010_Methods.md)
   + methods transcribed from primary article
-- [AuthorYYYY_TableN.csv](AuthorYYYY_TableN.csv)
+- [Martinez2010_Table1.csv](Martinez2010_Table1.csv)
   + table N from primary article with ...
+- [Martinez2010_Table2.csv](Martinez2010_Table2.csv)
+- [Martinez2010_Figure1.csv](Martinez2010_Figure1.csv)
 - [temp/](temp/)
     + scratch folder that will not be archived on GitHub, it should include local copies of the data resource (likely a PDF article) and any spreadsheets or other tools you used for the transcriptions.
 
@@ -166,13 +184,15 @@ These files are in the AuthorYYYY data rescue.
 
 + Lead
   - [ ] Read the article or data resource and the discription of the target project
-  - [ ] Create a fresh fork of the primary repository https://github.com/ktoddbrown/SoilDRaH/tree/main, it might be useful to rename it 'SoilDRaH_AuthorYYYY'
-  - [ ] Create a copy of this template folder and rename it to AuthorYYYY
+  - [ ] Create a fresh fork of the primary repository https://github.com/ktoddbrown/SoilDRaH/tree/main, it might be useful to rename it 'SoilDRaH_Martinez2010'
+  - [ ] Create a copy of this template folder and rename it to Martinez2010
   - [ ] Fill out Data summary section (except for the Files), the Data Rescue Plan (here!), and update the author section of the yml to reflect who is working on the rescue
   - [ ] Create a GitHub issue from the Data Rescue template and get feedback from a reviewer on the project (Dr Todd-Brown or a grad student typically).
   - [ ] Add the reviewer to the author list in the yml
 + Do
-  - [ ] Create a spreadsheet with TableN and export it to csv
+  - [ ] Create a spreadsheet with Table1 and export it to csv
+  - [ ] Create a spreadsheet with Table2 and export it to csv
+  - [ ] Create a spreadsheet with Figure1 and export it to csv
   - [ ] Extract points from FigureM and export it to csv
   - [ ] Transcribe or copy the method section
   - [ ] Insert references to bib entries
@@ -187,7 +207,7 @@ These files are in the AuthorYYYY data rescue.
   - [ ] address any revisions in your pull request review
   - [ ] celebrate!
 
-## Table N
+## Table 1
 
 <!--- Common table modifications include: inserting an extra column to pivot sub-headers, filling in NA to identify blanks, and adding Latex or Markdown to denote formatting.---->
 
@@ -198,11 +218,11 @@ Table N was modified ....
 #| eval: false #remove when you have the file transcribed
 
 
-read_csv(file = tableN.file, #read in the specific file
+read_csv(file = table1.file, #read in the specific file
          skip = 1, #skip the first line with the caption
          #read everything as a character, don't worry about formatting yet
          col_types = cols(.default = col_character())) |>
-  kable(caption = read_csv(file = tableN.file, #read in that file again but...
+  kable(caption = read_csv(file = table1.file, #read in that file again but...
                            n_max = 1, #only read the first line
                            col_names = 'caption', #call it the caption
                            #read everything as a character
@@ -215,14 +235,52 @@ read_csv(file = tableN.file, #read in the specific file
 And is crosschecked with the secondary transcription
 
 ```{bash}
-#| label: compareTableN
+#| label: compareTable1
 #| eval: false
 
 # You will want to repeat the line below to cross check each csv and md file in the
 #... data rescue. Having no lines flagged by this command will ensure that each character matches exactly.
 
-diff --strip-trailing-cr --suppress-common-lines -y temp/AuthorYYYY_TableN_ABC.md AuthorYYYY_TableN.md
+diff --strip-trailing-cr --suppress-common-lines -y Martinez2010_Table1_LK.md Martinez2010_Table1_AC.md
 ```
+
+## Table 2
+
+<!--- Common table modifications include: inserting an extra column to pivot sub-headers, filling in NA to identify blanks, and adding Latex or Markdown to denote formatting.---->
+
+Table N was modified ....
+
+```{r}
+#| label: table2Check
+#| eval: false #remove when you have the file transcribed
+
+
+read_csv(file = table2.file, #read in the specific file
+         skip = 1, #skip the first line with the caption
+         #read everything as a character, don't worry about formatting yet
+         col_types = cols(.default = col_character())) |>
+  kable(caption = read_csv(file = table2.file, #read in that file again but...
+                           n_max = 1, #only read the first line
+                           col_names = 'caption', #call it the caption
+                           #read everything as a character
+                           col_types = cols(.default = col_character()),
+                           show_col_types = FALSE #do not return messages
+                           )$caption #and take it out of the table
+  )
+```
+
+And is crosschecked with the secondary transcription
+
+```{bash}
+#| label: compareTable2
+#| eval: false
+
+# You will want to repeat the line below to cross check each csv and md file in the
+#... data rescue. Having no lines flagged by this command will ensure that each character matches exactly.
+
+diff --strip-trailing-cr --suppress-common-lines -y Martinez2010_Table2_VM.md Martinez2010_Table2_AC.md
+```
+
 
 ## Methods
 
@@ -233,7 +291,7 @@ Any different to the cross check for the methods section will be output after th
 #| eval: false
 # You will want to repeat the line below to cross check each csv and md file in the
 #... data rescue. Having no lines flagged by this command will ensure that each character matches exactly.
-diff --strip-trailing-cr --suppress-common-lines -y temp/AuthorYYYY_Methods_ABC.md AuthorYYYY_Methods.md
+diff --strip-trailing-cr --suppress-common-lines -y temp/Martinez2010_Methods_ABC.md Martinez2010_Methods.md
 ```
 
 ### Methods  - Text
@@ -315,7 +373,7 @@ Below verifies that the data from the function matches what is coded above.
 #| label: checkReadFunction_lvl0
 
 if(file.exists(readsource.file)){
-  datafunction.lvl0.ls <- readAuthorYYYY(dataDir = '.',
+  datafunction.lvl0.ls <- readMartinez2010(dataDir = '.',
                                          dataLevel = 'level0')
   
   if(isTRUE(all.equal(datafunction.lvl0.ls, data.lvl0.ls))){
@@ -507,7 +565,7 @@ Check for an exact match with the read function.
 #| label: checkReadFunction_lvl1
 
 if(file.exists(readsource.file)){
-  datafunction.lvl1.ls <- readAuthorYYYY(dataDir = '.',
+  datafunction.lvl1.ls <- readMartinez2010(dataDir = '.',
                                          dataLevel = 'level1')
   
   if(isTRUE(all.equal(datafunction.lvl0.ls, data.lvl0.ls))){
