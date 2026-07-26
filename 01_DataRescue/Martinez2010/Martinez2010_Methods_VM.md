@@ -3,19 +3,22 @@
 ## Experimental site and assay description
 The study was carried out in the Cauquenes Experimental Centre of Instituto de Investigaciones Agropecuarias INIA (35°78’ S; 72°20’ W) located in the interior dryland of the Maule Region.
 The climate is sub-humid Mediterranean with an annual precipitation of 695 mm.
-Annual mean temperature is 14.7 °C with a minimum mean of 4.7 °C and a maximum of 27 °C (Del Pozo and Del Canto, 1999). 
+Annual mean temperature is 14.7 °C with a minimum mean of 4.7 °C and a maximum of 27 °C (Del Pozo and Del Canto, 1999).
 Soils are Alfisols of the Cauquenes and Maule series which have been classified as Ultic Haploxeralfs and Ultic Palexeralfs, respectively (CIREN, 1994; Stolpe, 2006).
-Ecosystems of low tree density espinals showed pH of 5.10 and 1.4% organic C content while those with greater canopy cover showed pH of 6.1 and 1.9% organic C. Ecosystems were representative of the area and classified according to hawthorn hedge cover density: degraded espinal (De) with 10 to 25%, typical espinal (Pd) with 25 to 50%, and well preserved espinal (Wp) with 50 to 80% canopy cover.
+Ecosystems of low tree density espinals showed pH of 5.10 and 1.4% organic C content while those with greater canopy cover showed pH of 6.1 and 1.9% organic C.
+Ecosystems were representative of the area and classified according to hawthorn hedge cover density: degraded espinal (De) with 10 to 25%, typical espinal (Pd) with 25 to 50%, and well preserved espinal (Wp) with 50 to 80% canopy cover.
 Decomposition of two litters was compared, a leguminous shrub A. caven and an annual grass, Italian ryegrass (L. multiflorum).
 These were put into litter bags (12 cm x 20 cm x 2 mm) in 1-m high cages to prevent damage by grazing animals during the experiment.
 Acacia caven, 5 g (dry weight) and 10 g of L. multiflorum were put separately in the bags.
 A total of 720 litter bags were needed for two types of litter, three ecosystems with two replicates for each one, and six sampling dates.
-The experiment started in May 2004 and samples were collected after 60, 120, 180, 250, 330, and 420 d. A total of 120 bags were randomly selected on each sampling date (10 bags from each site and type of material).
+The experiment started in May 2004 and samples were collected after 60, 120, 180, 250, 330, and 420 d.
+A total of 120 bags were randomly selected on each sampling date (10 bags from each site and type of material).
 Samples were manually cleaned of soil contamination with the help of a magnifying glass, oven-dried for 48 h at 55 °C to determine dry weight of residual material, ground to 1 mm (Cyclotec, Perstop Analytical, Höganäs, Sweden), and stored in plastic bags for chemical analysis.
 
 ## NIRS prediction equations
 Prediction equations were developed based on a European program TROPANDES (Coûteaux et al., 2006) which included material similar to the study and where more than 3500 samples in decomposition were scanned by NIRS (NIR Systems 6500, Perstorp Analytical, Silver Spring, Maryland, USA) (Coûteaux et al., 2005).
-Spectra of this study were compared with spectra selected in TROPANDES. Extreme spectra (Mahalanobis distance > 3) were considered distant and excluded.
+Spectra of this study were compared with spectra selected in TROPANDES.
+Extreme spectra (Mahalanobis distance > 3) were considered distant and excluded.
 The most representative samples were then selected by eliminating similar spectra (Mahalanobis distance < 0.6).
 The Van Soest protocol (Van Soest and Robertson, 1985) was applied to the selected samples to determine hemicellulose, cellulose, lignin content, as well as non-structural components.
 
