@@ -241,7 +241,7 @@ And is crosschecked with the secondary transcription
 # You will want to repeat the line below to cross check each csv and md file in the
 #... data rescue. Having no lines flagged by this command will ensure that each character matches exactly.
 
-diff --strip-trailing-cr --suppress-common-lines -y Martinez2010_Table1_LK.md Martinez2010_Table1_AC.md
+diff --strip-trailing-cr --suppress-common-lines -y Martinez2010_Table1.csv Martinez2010_Table1_AC.csv
 ```
 
 ## Table 2
@@ -278,9 +278,77 @@ And is crosschecked with the secondary transcription
 # You will want to repeat the line below to cross check each csv and md file in the
 #... data rescue. Having no lines flagged by this command will ensure that each character matches exactly.
 
-diff --strip-trailing-cr --suppress-common-lines -y Martinez2010_Table2_VM.md Martinez2010_Table2_AC.md
+diff --strip-trailing-cr --suppress-common-lines -y Martinez2010_Table2.csv Martinez2010_Table2_AC.csv
 ```
 
+## Figure 1
+
+<!--- Common table modifications include: inserting an extra column to pivot sub-headers, filling in NA to identify blanks, and adding Latex or Markdown to denote formatting.---->
+
+Figure 1 was modified ....
+
+```{r}
+#| label: Figure1Check
+#| eval: false #remove when you have the file transcribed
+
+
+read_csv(file = figure1.file, #read in the specific file
+         skip = 1, #skip the first line with the caption
+         #read everything as a character, don't worry about formatting yet
+         col_types = cols(.default = col_character())) |>
+  kable(caption = read_csv(file = figure1.file, #read in that file again but...
+                           n_max = 1, #only read the first line
+                           col_names = 'caption', #call it the caption
+                           #read everything as a character
+                           col_types = cols(.default = col_character()),
+                           show_col_types = FALSE #do not return messages
+                           )$caption #and take it out of the table
+  )
+```
+
+And is crosschecked with the secondary transcription
+
+```{bash}
+#| label: compareTable1
+#| eval: false
+
+# You will want to repeat the line below to cross check each csv and md file in the
+#... data rescue. Having no lines flagged by this command will ensure that each character matches exactly.
+
+diff --strip-trailing-cr --suppress-common-lines -y Martinez2010_Figure1.csv Martinez2010_Figure1_MA.csv
+```
+
+Now let's manipulate dataframe for plotting.
+
+```{r}
+
+figure1.df <- read_csv(file = figure1.file, #read in the specific file
+         skip = 1, #skip the first line with the caption
+         #read everything as a character, don't worry about formatting yet
+         col_types = cols(.default = col_character())) |>
+  mutate(`Ecosystem Degredation Level` = factor(`Ecosystem Degredation Level`,
+                                                levels = c("Wp 2", "Wp 1", "Pd 2", 
+                                                           "Pd 1", "De 2", "De 1"))) |>
+  mutate(across(c(`X Value`, `Y Value`, 
+                  `Upper Bound Y Value`), as.numeric)) |>
+  mutate(bound = `Upper Bound Y Value` - `Y Value`,
+         lower_bound = `Y Value` - bound) |> 
+  mutate(Figure = case_when(str_detect(Figure, 'A') ~ 'Acacia caven',
+                            str_detect(Figure, 'B') ~ 'Lolium multiflorum'))
+
+# make the plot
+ggplot(data = figure1.df, aes(x = `X Value`, y = `Y Value`,
+       shape = `Ecosystem Degredation Level`)) +
+  geom_point(size = 0.8) +
+  geom_errorbar(aes( ymin = lower_bound, ymax = `Upper Bound Y Value`), width = 5.5) +
+  scale_y_continuous(breaks = seq(40, 110, by = 10), limits = c(40, 110)) +
+  facet_wrap(~Figure, ncol = 1) +
+  scale_x_continuous(breaks = seq(0, 450, by = 50), limits = c(0, 450)) +
+  labs(y = 'Mass loss (% initial DW)',
+       x = 'Time(days)') +
+  theme_bw()
+
+```
 
 ## Methods
 
