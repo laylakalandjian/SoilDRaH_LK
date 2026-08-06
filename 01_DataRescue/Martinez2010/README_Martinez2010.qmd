@@ -29,6 +29,14 @@ authors: #author scheme from https://quarto.org/docs/journals/authors.html
       - ref: uf-ees
     role:
       - transcription: Table 1, Figure 1
+  - id: angelacanini-a11y
+    name:
+      given: Angela
+      family: Canini
+    affiliation:
+      - ref: uf-ees
+    role:
+      - transcription: Table 1, Table 2, Methods citations
 
 affiliations:
   - id: uf-ees
@@ -73,6 +81,30 @@ timelog:
       #start: YYYY-MM-DD THH:MM
       #alternatively duration can be combined with a being/end
       duration: P30M
+  - activity: 
+      description: Table 1
+      who: angelacanini-a11y #github username
+      #when you started and ended, can be just a year or down to the minute
+      end: 2026-08-06
+      #start: YYYY-MM-DD THH:MM
+      #alternatively duration can be combined with a being/end
+      duration: P90M
+  - activity: 
+      description: Table 2
+      who: angelacanini-a11y #github username
+      #when you started and ended, can be just a year or down to the minute
+      end: 2026-08-06
+      #start: YYYY-MM-DD THH:MM
+      #alternatively duration can be combined with a being/end
+      duration: P45M
+  - activity: 
+      description: Revise based on feedback
+      who: angelacanini-a11y #github username
+      #when you started and ended, can be just a year or down to the minute
+      end: 2026-08-06
+      #start: YYYY-MM-DD THH:MM
+      #alternatively duration can be combined with a being/end
+      duration: P60M
 version: 'vs202512' #template version, remove before use
 ---
 
