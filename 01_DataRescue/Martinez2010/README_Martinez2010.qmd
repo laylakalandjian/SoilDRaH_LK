@@ -248,7 +248,7 @@ diff --strip-trailing-cr --suppress-common-lines -y Martinez2010_Table1.csv Mart
 
 <!--- Common table modifications include: inserting an extra column to pivot sub-headers, filling in NA to identify blanks, and adding Latex or Markdown to denote formatting.---->
 
-Table N was modified ....
+Table 2 was modified ....
 
 ```{r}
 #| label: table2Check
@@ -359,7 +359,7 @@ Any different to the cross check for the methods section will be output after th
 #| eval: false
 # You will want to repeat the line below to cross check each csv and md file in the
 #... data rescue. Having no lines flagged by this command will ensure that each character matches exactly.
-diff --strip-trailing-cr --suppress-common-lines -y temp/Martinez2010_Methods_ABC.md Martinez2010_Methods.md
+diff --strip-trailing-cr --suppress-common-lines -y Martinez2010_Methods_MA.md Martinez2010_Methods_VM.md
 ```
 
 ### Methods  - Text
