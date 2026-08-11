@@ -105,6 +105,38 @@ timelog:
       #start: YYYY-MM-DD THH:MM
       #alternatively duration can be combined with a being/end
       duration: P45M
+  - activity: 
+      description: UF ESSIE PhD candidate
+      who: vaasukimarupaka #github username
+      #when you started and ended, can be just a year or down to the minute
+      start: 2026-16-06 T1600
+      #start: YYYY-MM-DD THH:MM
+      #alternatively duration can be combined with a being/end
+      duration: P05M
+  - activity: 
+      description: Table 2
+      who: vaasukimarupaka #github username
+      #when you started and ended, can be just a year or down to the minute
+      end: 2026-11-08
+      #start: YYYY-MM-DD THH:MM
+      #alternatively duration can be combined with a being/end
+      duration: P15M
+  - activity: 
+      description: Methods.md
+      who: vaasukimarupaka #github username
+      #when you started and ended, can be just a year or down to the minute
+      end: 2026-11-08
+      #start: YYYY-MM-DD THH:MM
+      #alternatively duration can be combined with a being/end
+      duration: P10M
+  - activity: 
+      description: Methods Citation
+      who: vaasukimarupaka #github username
+      #when you started and ended, can be just a year or down to the minute
+      end: 2026-11-08
+      #start: YYYY-MM-DD THH:MM
+      #alternatively duration can be combined with a being/end
+      duration: P15M
 version: 'vs202512' #template version, remove before use
 ---
 
