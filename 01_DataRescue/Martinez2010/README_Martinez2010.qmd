@@ -163,7 +163,7 @@ Solar exposure: Three different cover densities: well preserved (Wp) 50 to 80%, 
 
 These files are in the Martinez2010 data rescue.
 
-- [Readme](README_AUTHORYYYY.qmd)
+- [Readme](README_Martinez2010.qmd)
   + This is the primary file that documents the transcriptions and decision made during data rescue.
 - [Martinez2010.bib](Martinez2010.bib)
   + citation for article transcribed
@@ -241,7 +241,7 @@ And is crosschecked with the secondary transcription
 # You will want to repeat the line below to cross check each csv and md file in the
 #... data rescue. Having no lines flagged by this command will ensure that each character matches exactly.
 
-diff --strip-trailing-cr --suppress-common-lines -y Martinez2010_Table1_LK.md Martinez2010_Table1_AC.md
+diff --strip-trailing-cr --suppress-common-lines -y Martinez2010_Table1.csv Martinez2010_Table1_AC.md
 ```
 
 ## Table 2
@@ -278,7 +278,7 @@ And is crosschecked with the secondary transcription
 # You will want to repeat the line below to cross check each csv and md file in the
 #... data rescue. Having no lines flagged by this command will ensure that each character matches exactly.
 
-diff --strip-trailing-cr --suppress-common-lines -y Martinez2010_Table2_VM.md Martinez2010_Table2_AC.md
+diff --strip-trailing-cr --suppress-common-lines -y Martinez2010_Table2.md Martinez2010_Table2_AC.md
 ```
 
 
