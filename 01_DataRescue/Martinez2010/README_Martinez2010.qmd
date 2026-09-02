@@ -210,7 +210,7 @@ Figure 5: Two-dimensional graph for Lolium multiflorum, correlations of PC1 and 
 
 ## Fit for purpose: DeAD
 
-<!--- Write a brief discription of the project you are processing this data source for. This could be a copy-paste from other documentation. ---->
+<!--- Write a brief description of the project you are processing this data source for. This could be a copy-paste from other documentation. ---->
 
 The Decomposition Across Drylands (DeAD) data collection is a new data effort targeting dryland decomposition studies. The purpose of this data collection is to develop better litter decay models for dryland ecosystems. This paper has been identified as a source for the information above.
 
@@ -219,7 +219,7 @@ The Decomposition Across Drylands (DeAD) data collection is a new data effort ta
 - Location: The study was carried out in the Cauquenes Experimental Centre of Instituto de Investigaciones Agropecuarias INIA (35°78’ S; 72°20’ W) located in the interior dryland of the Maule Region.
 - Duration: During 420 d and starting in April 2004 until August 2005.
 - Mass loss: Weight loss ranged from 31 to 52% in L. multiflorum and 26 to 40% in A. caven after 420 d. Specifics reported in figure 1 and table 2.
-Solar exposure: Three different cover densities: well preserved (Wp) 50 to 80%, typical (Pd) 25 to 50%, and degraded (De) with 10 to 25% cover.
+- Solar exposure: Three different cover densities: well preserved (Wp) 50 to 80%, typical (Pd) 25 to 50%, and degraded (De) with 10 to 25% cover.
   
 ## Files
 
@@ -236,9 +236,11 @@ These files are in the Martinez2010 data rescue.
 - [Martinez2010_Methods.md](Martinez2010_Methods.md)
   + methods transcribed from primary article
 - [Martinez2010_Table1.csv](Martinez2010_Table1.csv)
-  + table N from primary article with ...
+  + table 1 from primary article with litter chemical composition of both litter species before field incubation.
 - [Martinez2010_Table2.csv](Martinez2010_Table2.csv)
+  + table 2 from primary article with the decomposition rate, weight loss, and regression coefficient of each litter species at each ecosystem.
 - [Martinez2010_Figure1.csv](Martinez2010_Figure1.csv)
+  + figure 1 from primary article with weight loss as a percentage of initial weight for both species in each ecosystem across 420 days.
 - [temp/](temp/)
     + scratch folder that will not be archived on GitHub, it should include local copies of the data resource (likely a PDF article) and any spreadsheets or other tools you used for the transcriptions.
 
@@ -247,25 +249,25 @@ These files are in the Martinez2010 data rescue.
 ## Data Rescue Plan
 
 + Lead
-  - [ ] Read the article or data resource and the discription of the target project
-  - [ ] Create a fresh fork of the primary repository https://github.com/ktoddbrown/SoilDRaH/tree/main, it might be useful to rename it 'SoilDRaH_Martinez2010'
-  - [ ] Create a copy of this template folder and rename it to Martinez2010
-  - [ ] Fill out Data summary section (except for the Files), the Data Rescue Plan (here!), and update the author section of the yml to reflect who is working on the rescue
-  - [ ] Create a GitHub issue from the Data Rescue template and get feedback from a reviewer on the project (Dr Todd-Brown or a grad student typically).
-  - [ ] Add the reviewer to the author list in the yml
+  - [x] Read the article or data resource and the discription of the target project
+  - [x] Create a fresh fork of the primary repository https://github.com/ktoddbrown/SoilDRaH/tree/main, it might be useful to rename it 'SoilDRaH_Martinez2010'
+  - [x] Create a copy of this template folder and rename it to Martinez2010
+  - [x] Fill out Data summary section (except for the Files), the Data Rescue Plan (here!), and update the author section of the yml to reflect who is working on the rescue
+  - [x] Create a GitHub issue from the Data Rescue template and get feedback from a reviewer on the project (Dr Todd-Brown or a grad student typically).
+  - [x] Add the reviewer to the author list in the yml
 + Do
-  - [ ] Create a spreadsheet with Table1 and export it to csv
-  - [ ] Create a spreadsheet with Table2 and export it to csv
-  - [ ] Create a spreadsheet with Figure1 and export it to csv
-  - [ ] Extract points from FigureM and export it to csv
-  - [ ] Transcribe or copy the method section
-  - [ ] Insert references to bib entries
-  - [ ] reformat equations and mathematical symbols as [LaTex](https://en.wikibooks.org/wiki/LaTeX/Mathematics)
-  - [ ] reformat text using [Markdown](https://www.markdownguide.org/cheat-sheet/)
-  - [ ] Create a bib file with the citations from the methods section
-  - [ ] Push to your local fork and get a second transcription pushed to your local fork by someone else on the project
+  - [x] Create a spreadsheet with Table1 and export it to csv
+  - [x] Create a spreadsheet with Table2 and export it to csv
+  - [x] Create a spreadsheet with Figure1 and export it to csv
+  - [x] Extract points from Figure1 and export it to csv
+  - [x] Transcribe or copy the method section
+  - [x] Insert references to bib entries
+  - [x] reformat equations and mathematical symbols as [LaTex](https://en.wikibooks.org/wiki/LaTeX/Mathematics)
+  - [x] reformat text using [Markdown](https://www.markdownguide.org/cheat-sheet/)
+  - [x] Create a bib file with the citations from the methods section
+  - [x] Push to your local fork and get a second transcription pushed to your local fork by someone else on the project
 + Measure
-  - [ ] cross check with second transcriber for tables and methods, and resolve any differences
+  - [x] cross check with second transcriber for tables and methods, and resolve any differences
   - [ ] compile or render this ReadMe with all chunks up through the Level 0 data rescue section with `eval: true`
   - [ ] push to your local fork and create a pull request to the main branch of the primary repository
   - [ ] address any revisions in your pull request review
@@ -275,7 +277,7 @@ These files are in the Martinez2010 data rescue.
 
 <!--- Common table modifications include: inserting an extra column to pivot sub-headers, filling in NA to identify blanks, and adding Latex or Markdown to denote formatting.---->
 
-Table N was modified ....
+Table 1 was modified ....
 
 ```{r}
 #| label: table1Check
@@ -305,11 +307,10 @@ And is crosschecked with the secondary transcription
 # You will want to repeat the line below to cross check each csv and md file in the
 #... data rescue. Having no lines flagged by this command will ensure that each character matches exactly.
 
-<<<<<<< HEAD
-diff --strip-trailing-cr --suppress-common-lines -y Martinez2010_Table1.csv Martinez2010_Table1_AC.md
-=======
-diff --strip-trailing-cr --suppress-common-lines -y Martinez2010_Table1.csv Martinez2010_Table1_AC.csv
->>>>>>> 3da55549dcf50b2472e7dd1ec160adc724883cac
+
+diff --strip-trailing-cr --suppress-common-lines -y Martinez2010_Table1.csv temp/Martinez2010_Table1_AC.csv
+
+
 ```
 
 ## Table 2
@@ -346,11 +347,11 @@ And is crosschecked with the secondary transcription
 # You will want to repeat the line below to cross check each csv and md file in the
 #... data rescue. Having no lines flagged by this command will ensure that each character matches exactly.
 
-<<<<<<< HEAD
-diff --strip-trailing-cr --suppress-common-lines -y Martinez2010_Table2.md Martinez2010_Table2_AC.md
-=======
-diff --strip-trailing-cr --suppress-common-lines -y Martinez2010_Table2.csv Martinez2010_Table2_AC.csv
->>>>>>> 3da55549dcf50b2472e7dd1ec160adc724883cac
+
+# diff --strip-trailing-cr --suppress-common-lines -y Martinez2010_Table2.md Martinez2010_Table2_AC.md
+
+diff --strip-trailing-cr --suppress-common-lines -y Martinez2010_Table2.csv temp/Martinez2010_Table2_AC.csv
+
 ```
 
 ## Figure 1
@@ -387,7 +388,7 @@ And is crosschecked with the secondary transcription
 # You will want to repeat the line below to cross check each csv and md file in the
 #... data rescue. Having no lines flagged by this command will ensure that each character matches exactly.
 
-diff --strip-trailing-cr --suppress-common-lines -y Martinez2010_Figure1.csv Martinez2010_Figure1_MA.csv
+diff --strip-trailing-cr --suppress-common-lines -y Martinez2010_Figure1.csv temp/Martinez2010_Figure1_MA.csv
 ```
 
 Now let's manipulate dataframe for plotting.
@@ -431,7 +432,7 @@ Any different to the cross check for the methods section will be output after th
 #| eval: false
 # You will want to repeat the line below to cross check each csv and md file in the
 #... data rescue. Having no lines flagged by this command will ensure that each character matches exactly.
-diff --strip-trailing-cr --suppress-common-lines -y Martinez2010_Methods_MA.md Martinez2010_Methods_VM.md
+diff --strip-trailing-cr --suppress-common-lines -y Martinez2010_Methods.md temp/Martinez2010_Methods_VM.md
 ```
 
 ### Methods  - Text
@@ -649,7 +650,7 @@ data.lvl1.ls <- list(
 
 `of_variable` in the data files should be defined in the SoilDRaH Vocabulary files.
 
-```{r}
+```{r, eval = FALSE}
 #| label: check_of_variable
 
 #Read in the list of current 'of_variable' entries
@@ -676,7 +677,7 @@ if(length(new_variables) == 0){
 
 `is_type` in the data files should be defined in the SoilDRaH Vocabulary files.
 
-```{r}
+```{r, eval = FALSE}
 #| label: check_is_type
 
 #read in the current types and what variable they are associated with
@@ -722,7 +723,7 @@ if(nrow(undefined_data_type) == 0){
 
 Check for an exact match with the read function.
 
-```{r}
+```{r, eval = FALSE}
 #| label: checkReadFunction_lvl1
 
 if(file.exists(readsource.file)){
