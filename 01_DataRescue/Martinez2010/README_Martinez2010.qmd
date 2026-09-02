@@ -37,6 +37,14 @@ authors: #author scheme from https://quarto.org/docs/journals/authors.html
       - ref: uf-ees
     role:
       - transcription: Table 1, Table 2, Methods citations
+  - id: vaasukimarupaka
+    name:
+      given: Vaasuki
+      family: Marupaka
+    affiliation:
+      - ref: uf-ees
+    role:
+      - transcription: Table 1, Methods.md, Methods citations
 
 affiliations:
   - id: uf-ees
