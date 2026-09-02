@@ -29,6 +29,14 @@ authors: #author scheme from https://quarto.org/docs/journals/authors.html
       - ref: uf-ees
     role:
       - transcription: Table 1, Figure 1
+  - id: angelacanini-a11y
+    name:
+      given: Angela
+      family: Canini
+    affiliation:
+      - ref: uf-ees
+    role:
+      - transcription: Table 1, Table 2, Methods citations
 
 affiliations:
   - id: uf-ees
@@ -73,6 +81,62 @@ timelog:
       #start: YYYY-MM-DD THH:MM
       #alternatively duration can be combined with a being/end
       duration: P30M
+  - activity: 
+      description: Table 1
+      who: angelacanini-a11y #github username
+      #when you started and ended, can be just a year or down to the minute
+      end: 2026-08-06
+      #start: YYYY-MM-DD THH:MM
+      #alternatively duration can be combined with a being/end
+      duration: P90M
+  - activity: 
+      description: Table 2
+      who: angelacanini-a11y #github username
+      #when you started and ended, can be just a year or down to the minute
+      end: 2026-08-06
+      #start: YYYY-MM-DD THH:MM
+      #alternatively duration can be combined with a being/end
+      duration: P45M
+  - activity: 
+      description: Methods Citation
+      who: angelacanini-a11y #github username
+      #when you started and ended, can be just a year or down to the minute
+      end: 2026-08-06
+      #start: YYYY-MM-DD THH:MM
+      #alternatively duration can be combined with a being/end
+      duration: P45M
+  - activity: 
+      description: UF ESSIE PhD candidate
+      who: vaasukimarupaka #github username
+      #when you started and ended, can be just a year or down to the minute
+      start: 2026-16-06 T1600
+      #start: YYYY-MM-DD THH:MM
+      #alternatively duration can be combined with a being/end
+      duration: P05M
+  - activity: 
+      description: Table 2
+      who: vaasukimarupaka #github username
+      #when you started and ended, can be just a year or down to the minute
+      end: 2026-11-08
+      #start: YYYY-MM-DD THH:MM
+      #alternatively duration can be combined with a being/end
+      duration: P15M
+  - activity: 
+      description: Methods.md
+      who: vaasukimarupaka #github username
+      #when you started and ended, can be just a year or down to the minute
+      end: 2026-11-08
+      #start: YYYY-MM-DD THH:MM
+      #alternatively duration can be combined with a being/end
+      duration: P10M
+  - activity: 
+      description: Methods Citation
+      who: vaasukimarupaka #github username
+      #when you started and ended, can be just a year or down to the minute
+      end: 2026-11-08
+      #start: YYYY-MM-DD THH:MM
+      #alternatively duration can be combined with a being/end
+      duration: P15M
 version: 'vs202512' #template version, remove before use
 ---
 
@@ -241,14 +305,18 @@ And is crosschecked with the secondary transcription
 # You will want to repeat the line below to cross check each csv and md file in the
 #... data rescue. Having no lines flagged by this command will ensure that each character matches exactly.
 
+<<<<<<< HEAD
 diff --strip-trailing-cr --suppress-common-lines -y Martinez2010_Table1.csv Martinez2010_Table1_AC.md
+=======
+diff --strip-trailing-cr --suppress-common-lines -y Martinez2010_Table1.csv Martinez2010_Table1_AC.csv
+>>>>>>> 3da55549dcf50b2472e7dd1ec160adc724883cac
 ```
 
 ## Table 2
 
 <!--- Common table modifications include: inserting an extra column to pivot sub-headers, filling in NA to identify blanks, and adding Latex or Markdown to denote formatting.---->
 
-Table N was modified ....
+Table 2 was modified ....
 
 ```{r}
 #| label: table2Check
@@ -278,9 +346,81 @@ And is crosschecked with the secondary transcription
 # You will want to repeat the line below to cross check each csv and md file in the
 #... data rescue. Having no lines flagged by this command will ensure that each character matches exactly.
 
+<<<<<<< HEAD
 diff --strip-trailing-cr --suppress-common-lines -y Martinez2010_Table2.md Martinez2010_Table2_AC.md
+=======
+diff --strip-trailing-cr --suppress-common-lines -y Martinez2010_Table2.csv Martinez2010_Table2_AC.csv
+>>>>>>> 3da55549dcf50b2472e7dd1ec160adc724883cac
 ```
 
+## Figure 1
+
+<!--- Common table modifications include: inserting an extra column to pivot sub-headers, filling in NA to identify blanks, and adding Latex or Markdown to denote formatting.---->
+
+Figure 1 was modified ....
+
+```{r}
+#| label: Figure1Check
+#| eval: false #remove when you have the file transcribed
+
+
+read_csv(file = figure1.file, #read in the specific file
+         skip = 1, #skip the first line with the caption
+         #read everything as a character, don't worry about formatting yet
+         col_types = cols(.default = col_character())) |>
+  kable(caption = read_csv(file = figure1.file, #read in that file again but...
+                           n_max = 1, #only read the first line
+                           col_names = 'caption', #call it the caption
+                           #read everything as a character
+                           col_types = cols(.default = col_character()),
+                           show_col_types = FALSE #do not return messages
+                           )$caption #and take it out of the table
+  )
+```
+
+And is crosschecked with the secondary transcription
+
+```{bash}
+#| label: compareTable1
+#| eval: false
+
+# You will want to repeat the line below to cross check each csv and md file in the
+#... data rescue. Having no lines flagged by this command will ensure that each character matches exactly.
+
+diff --strip-trailing-cr --suppress-common-lines -y Martinez2010_Figure1.csv Martinez2010_Figure1_MA.csv
+```
+
+Now let's manipulate dataframe for plotting.
+
+```{r}
+
+figure1.df <- read_csv(file = figure1.file, #read in the specific file
+         skip = 1, #skip the first line with the caption
+         #read everything as a character, don't worry about formatting yet
+         col_types = cols(.default = col_character())) |>
+  mutate(`Ecosystem Degredation Level` = factor(`Ecosystem Degredation Level`,
+                                                levels = c("Wp 2", "Wp 1", "Pd 2", 
+                                                           "Pd 1", "De 2", "De 1"))) |>
+  mutate(across(c(`X Value`, `Y Value`, 
+                  `Upper Bound Y Value`), as.numeric)) |>
+  mutate(bound = `Upper Bound Y Value` - `Y Value`,
+         lower_bound = `Y Value` - bound) |> 
+  mutate(Figure = case_when(str_detect(Figure, 'A') ~ 'Acacia caven',
+                            str_detect(Figure, 'B') ~ 'Lolium multiflorum'))
+
+# make the plot
+ggplot(data = figure1.df, aes(x = `X Value`, y = `Y Value`,
+       shape = `Ecosystem Degredation Level`)) +
+  geom_point(size = 0.8) +
+  geom_errorbar(aes( ymin = lower_bound, ymax = `Upper Bound Y Value`), width = 5.5) +
+  scale_y_continuous(breaks = seq(40, 110, by = 10), limits = c(40, 110)) +
+  facet_wrap(~Figure, ncol = 1) +
+  scale_x_continuous(breaks = seq(0, 450, by = 50), limits = c(0, 450)) +
+  labs(y = 'Mass loss (% initial DW)',
+       x = 'Time(days)') +
+  theme_bw()
+
+```
 
 ## Methods
 
@@ -291,7 +431,7 @@ Any different to the cross check for the methods section will be output after th
 #| eval: false
 # You will want to repeat the line below to cross check each csv and md file in the
 #... data rescue. Having no lines flagged by this command will ensure that each character matches exactly.
-diff --strip-trailing-cr --suppress-common-lines -y temp/Martinez2010_Methods_ABC.md Martinez2010_Methods.md
+diff --strip-trailing-cr --suppress-common-lines -y Martinez2010_Methods_MA.md Martinez2010_Methods_VM.md
 ```
 
 ### Methods  - Text
@@ -351,18 +491,39 @@ data.lvl0.ls <- list(
     Table1 = list(
       #Read the caption as a text string. Captions are the first cell on 
       #...the first row.
-      caption = read_csv(file = tableN.file,
+      caption = read_csv(file = table1.file,
                          col_types = cols(.default = col_character()),
                          n_max = 1, col_names = FALSE)$X1[1],
       #Read in all the data, skipping the first row with the caption and read
       #...in the table as character. This element is a tibble (data.frame).
-      primary = read_csv(file = tableN.file,
+      primary = read_csv(file = table1.file,
                          col_types = cols(.default = col_character()),
                          skip = 1)
-    ) #End 'Table1' element
+    ), #End 'Table1' element
     #Repeat for all tables and figures...
-   ) #end 'data' element
-)
+   Table2 = list(
+      #Read the caption as a text string. Captions are the first cell on 
+      #...the first row.
+      caption = read_csv(file = table2.file,
+                         col_types = cols(.default = col_character()),
+                         n_max = 1, col_names = FALSE)$X1[1],
+      #Read in all the data, skipping the first row with the caption and read
+      #...in the table as character. This element is a tibble (data.frame).
+      primary = read_csv(file = table2.file,
+                         col_types = cols(.default = col_character()),
+                         skip = 1)), #end 'data' element
+   Figure1 = list(
+      #Read the caption as a text string. Captions are the first cell on 
+      #...the first row.
+      caption = read_csv(file = figure1.file,
+                         col_types = cols(.default = col_character()),
+                         n_max = 1, col_names = FALSE)$X1[1],
+      #Read in all the data, skipping the first row with the caption and read
+      #...in the table as character. This element is a tibble (data.frame).
+      primary = read_csv(file = figure1.file,
+                         col_types = cols(.default = col_character()),
+                         skip = 1))
+))
 
 ```
 
