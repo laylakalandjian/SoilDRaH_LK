@@ -3,7 +3,7 @@ title: "Data Rescue: Martinez 2010"
 format:
   html:
     toc: true
-    eval: false #default to not evaluating the chunks, override this the template is completed
+    eval: true #default to not evaluating the chunks, override this the template is completed
 date: last-modified
 date-format: YYYY-MMMM
 bibliography:
@@ -18,7 +18,7 @@ authors: #author scheme from https://quarto.org/docs/journals/authors.html
     affiliation:
       - ref: uf-ees
     role: #TODO define these roles and add reference
-      - transcription: lead #secondary, review
+      - transcription: review #secondary, review
       - standardization: lead #review
       - curation: lead #review
   - id: laylakalandjian
@@ -37,6 +37,14 @@ authors: #author scheme from https://quarto.org/docs/journals/authors.html
       - ref: uf-ees
     role:
       - transcription: Table 1, Table 2, Methods citations
+  - id: vaasukimarupaka
+    name:
+      given: Vaasuki
+      family: Marupaka
+    affiliation:
+      - ref: uf-ees
+    role:
+      - transcription: Table 1, Methods.md, Methods citations
 
 affiliations:
   - id: uf-ees
@@ -281,7 +289,11 @@ Table 1 was modified by adding Latex and Markdown to denote formatting.
 
 ```{r}
 #| label: table1Check
+<<<<<<< HEAD
 
+=======
+#| eval: true #remove when you have the file transcribed
+>>>>>>> 10be01a40b998a77808530199233192ba45fa54f
 
 
 read_csv(file = table1.file, #read in the specific file
@@ -321,7 +333,11 @@ Table 2 was modified by adding Latex and Markdown to denote formatting.
 
 ```{r}
 #| label: table2Check
+<<<<<<< HEAD
 
+=======
+#| eval: true #remove when you have the file transcribed
+>>>>>>> 10be01a40b998a77808530199233192ba45fa54f
 
 
 read_csv(file = table2.file, #read in the specific file
@@ -361,7 +377,11 @@ Figure 1 was not modified.
 
 ```{r}
 #| label: Figure1Check
+<<<<<<< HEAD
 
+=======
+#| eval: true #remove when you have the file transcribed
+>>>>>>> 10be01a40b998a77808530199233192ba45fa54f
 
 
 read_csv(file = figure1.file, #read in the specific file
@@ -381,8 +401,13 @@ read_csv(file = figure1.file, #read in the specific file
 And is crosschecked with the secondary transcription
 
 ```{bash}
+<<<<<<< HEAD
 #| label: compareFigure1Table
 
+=======
+#| label: compareFigure1
+#| eval: false
+>>>>>>> 10be01a40b998a77808530199233192ba45fa54f
 
 # You will want to repeat the line below to cross check each csv and md file in the
 #... data rescue. Having no lines flagged by this command will ensure that each character matches exactly.
