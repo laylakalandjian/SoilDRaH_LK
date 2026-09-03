@@ -289,11 +289,8 @@ Table 1 was modified by adding Latex and Markdown to denote formatting.
 
 ```{r}
 #| label: table1Check
-<<<<<<< HEAD
-
-=======
 #| eval: true #remove when you have the file transcribed
->>>>>>> 10be01a40b998a77808530199233192ba45fa54f
+
 
 
 read_csv(file = table1.file, #read in the specific file
@@ -333,11 +330,8 @@ Table 2 was modified by adding Latex and Markdown to denote formatting.
 
 ```{r}
 #| label: table2Check
-<<<<<<< HEAD
-
-=======
 #| eval: true #remove when you have the file transcribed
->>>>>>> 10be01a40b998a77808530199233192ba45fa54f
+
 
 
 read_csv(file = table2.file, #read in the specific file
@@ -377,11 +371,8 @@ Figure 1 was not modified.
 
 ```{r}
 #| label: Figure1Check
-<<<<<<< HEAD
-
-=======
 #| eval: true #remove when you have the file transcribed
->>>>>>> 10be01a40b998a77808530199233192ba45fa54f
+
 
 
 read_csv(file = figure1.file, #read in the specific file
