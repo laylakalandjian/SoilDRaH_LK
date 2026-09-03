@@ -392,13 +392,8 @@ read_csv(file = figure1.file, #read in the specific file
 And is crosschecked with the secondary transcription
 
 ```{bash}
-<<<<<<< HEAD
-#| label: compareFigure1Table
-
-=======
 #| label: compareFigure1
 #| eval: false
->>>>>>> 10be01a40b998a77808530199233192ba45fa54f
 
 # You will want to repeat the line below to cross check each csv and md file in the
 #... data rescue. Having no lines flagged by this command will ensure that each character matches exactly.
