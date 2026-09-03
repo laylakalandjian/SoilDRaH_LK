@@ -268,7 +268,7 @@ These files are in the Martinez2010 data rescue.
   - [x] Push to your local fork and get a second transcription pushed to your local fork by someone else on the project
 + Measure
   - [x] cross check with second transcriber for tables and methods, and resolve any differences
-  - [ ] compile or render this ReadMe with all chunks up through the Level 0 data rescue section with `eval: true`
+  - [x] compile or render this ReadMe with all chunks up through the Level 0 data rescue section with `eval: true`
   - [ ] push to your local fork and create a pull request to the main branch of the primary repository
   - [ ] address any revisions in your pull request review
   - [ ] celebrate!
@@ -277,11 +277,11 @@ These files are in the Martinez2010 data rescue.
 
 <!--- Common table modifications include: inserting an extra column to pivot sub-headers, filling in NA to identify blanks, and adding Latex or Markdown to denote formatting.---->
 
-Table 1 was modified ....
+Table 1 was modified by adding Latex and Markdown to denote formatting.
 
 ```{r}
 #| label: table1Check
-#| eval: false #remove when you have the file transcribed
+
 
 
 read_csv(file = table1.file, #read in the specific file
@@ -302,7 +302,7 @@ And is crosschecked with the secondary transcription
 
 ```{bash}
 #| label: compareTable1
-#| eval: false
+
 
 # You will want to repeat the line below to cross check each csv and md file in the
 #... data rescue. Having no lines flagged by this command will ensure that each character matches exactly.
@@ -317,11 +317,11 @@ diff --strip-trailing-cr --suppress-common-lines -y Martinez2010_Table1.csv temp
 
 <!--- Common table modifications include: inserting an extra column to pivot sub-headers, filling in NA to identify blanks, and adding Latex or Markdown to denote formatting.---->
 
-Table 2 was modified ....
+Table 2 was modified by adding Latex and Markdown to denote formatting.
 
 ```{r}
 #| label: table2Check
-#| eval: false #remove when you have the file transcribed
+
 
 
 read_csv(file = table2.file, #read in the specific file
@@ -342,7 +342,6 @@ And is crosschecked with the secondary transcription
 
 ```{bash}
 #| label: compareTable2
-#| eval: false
 
 # You will want to repeat the line below to cross check each csv and md file in the
 #... data rescue. Having no lines flagged by this command will ensure that each character matches exactly.
@@ -358,11 +357,11 @@ diff --strip-trailing-cr --suppress-common-lines -y Martinez2010_Table2.csv temp
 
 <!--- Common table modifications include: inserting an extra column to pivot sub-headers, filling in NA to identify blanks, and adding Latex or Markdown to denote formatting.---->
 
-Figure 1 was modified ....
+Figure 1 was not modified.
 
 ```{r}
 #| label: Figure1Check
-#| eval: false #remove when you have the file transcribed
+
 
 
 read_csv(file = figure1.file, #read in the specific file
@@ -382,8 +381,8 @@ read_csv(file = figure1.file, #read in the specific file
 And is crosschecked with the secondary transcription
 
 ```{bash}
-#| label: compareTable1
-#| eval: false
+#| label: compareFigure1Table
+
 
 # You will want to repeat the line below to cross check each csv and md file in the
 #... data rescue. Having no lines flagged by this command will ensure that each character matches exactly.
@@ -429,7 +428,7 @@ Any different to the cross check for the methods section will be output after th
 
 ```{bash}
 #| label: compareMethods
-#| eval: false
+
 # You will want to repeat the line below to cross check each csv and md file in the
 #... data rescue. Having no lines flagged by this command will ensure that each character matches exactly.
 diff --strip-trailing-cr --suppress-common-lines -y Martinez2010_Methods.md temp/Martinez2010_Methods_VM.md
@@ -652,6 +651,7 @@ data.lvl1.ls <- list(
 
 ```{r, eval = FALSE}
 #| label: check_of_variable
+#| eval: false
 
 #Read in the list of current 'of_variable' entries
 SoilDRaH_variable_list <- read_csv(file =of_variable.file,
@@ -677,8 +677,9 @@ if(length(new_variables) == 0){
 
 `is_type` in the data files should be defined in the SoilDRaH Vocabulary files.
 
-```{r, eval = FALSE}
+```{r}
 #| label: check_is_type
+#| eval: false
 
 #read in the current types and what variable they are associated with
 SoilDRaH_type_list <- read_csv(file = is_type.file,
@@ -723,8 +724,9 @@ if(nrow(undefined_data_type) == 0){
 
 Check for an exact match with the read function.
 
-```{r, eval = FALSE}
+```{r}
 #| label: checkReadFunction_lvl1
+#| eval: false
 
 if(file.exists(readsource.file)){
   datafunction.lvl1.ls <- readMartinez2010(dataDir = '.',
