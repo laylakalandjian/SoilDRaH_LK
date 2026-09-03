@@ -203,18 +203,18 @@ In this study, conducted in the Mediterranean ecosystems of central southern Chi
 
 <!--- Write a brief discription of all the tables and figures in this source. This should include full variable names when possible. It is perfectly fine to restate the captions here or copy other text that feels complete. Please keep this to a single sentence for each table/figure.--->
 
-Tables
-Table 1: Litter chemical composition of Acacia caven and Lolium multiflorum before field incubation.
-Table 2: Decomposition rate (k) and weight loss (A) at 420 days for Acacia caven and Lolium multiflorum litter.
-Table 3: Correlation matrix of principal components for Acacia caven and Lolium multiflorum.
+- Tables
+  1) Table 1: Litter chemical composition of Acacia caven and Lolium multiflorum before field incubation.
+  2) Table 2: Decomposition rate (k) and weight loss (A) at 420 days for Acacia caven and Lolium multiflorum litter.
+  3) Table 3: Correlation matrix of principal components for Acacia caven and Lolium multiflorum.
 
-Figures
-Figure 1: Weight loss as a percentage of initial weight for Acacia caven and Lolium multiflorum in a degraded ecosystem
-(De), typical ecosystem (Pd), and well preserved ecosystem (Wp) over 450 days.
-Figure 2: Two-dimensional graph for PC1 and PC2 of Acacia caven litter with the variables under study
-Figure 3: ANOVA (p < 0.001) for PC1 (a) and PC3 (b) factors for Acacia caven.
-Figure 4: ANOVA (p < 0.001) PC2 factor for Acacia caven.
-Figure 5: Two-dimensional graph for Lolium multiflorum, correlations of PC1 and PC2 principal components with each variable under study.
+
+- Figures
+  1) Figure 1: Weight loss as a percentage of initial weight for Acacia caven and Lolium multiflorum in a degraded ecosystem (De), typical ecosystem (Pd), and well preserved ecosystem (Wp) over 450 days.
+  2) Figure 2: Two-dimensional graph for PC1 and PC2 of Acacia caven litter with the variables under study
+  3) Figure 3: ANOVA (p < 0.001) for PC1 (a) and PC3 (b) factors for Acacia caven.
+  4) Figure 4: ANOVA (p < 0.001) PC2 factor for Acacia caven.
+  5) Figure 5: Two-dimensional graph for Lolium multiflorum, correlations of PC1 and PC2 principal components with each variable under study.
 
 ## Fit for purpose: DeAD
 
@@ -289,7 +289,6 @@ Table 1 was modified by adding Latex and Markdown to denote formatting.
 
 ```{r}
 #| label: table1Check
-#| eval: true #remove when you have the file transcribed
 
 
 
@@ -330,7 +329,7 @@ Table 2 was modified by adding Latex and Markdown to denote formatting.
 
 ```{r}
 #| label: table2Check
-#| eval: true #remove when you have the file transcribed
+
 
 
 
@@ -371,7 +370,6 @@ Figure 1 was not modified.
 
 ```{r}
 #| label: Figure1Check
-#| eval: true #remove when you have the file transcribed
 
 
 
@@ -452,7 +450,7 @@ The final text transcription from the Methods section is rendered below.
 ```{r}
 #| label: readMethods
 #| output: asis
-#| eval: true
+
 
 # This revised section will append two ### to any existing headers here so that it renders nicely with the other headers in the document.
 
