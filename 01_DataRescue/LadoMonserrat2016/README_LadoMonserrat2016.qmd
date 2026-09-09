@@ -20,7 +20,16 @@ authors: #author scheme from https://quarto.org/docs/journals/authors.html
       - transcription: lead #secondary, review
       - standardization: lead #review
       - curation: lead #review
-      
+  - id: AmandaLopez14
+    name:
+      given: Amanda
+      family: Lopez
+    affiliation:
+      - ref: uf-ees
+    role: #TODO define these roles and add reference
+      - transcription: secondary #secondary, review
+      - standardization:  #review
+      - curation: #review
 affiliations:
   - id: uf-ees
     name: University of Florida
@@ -65,6 +74,11 @@ timelog:
       who: laylakalandjian 
       start: 2026-09-08 T1045
       duration: PT45M
+  - activity: 
+      description: secondary methods section transcription.
+      who: AmandaLopez14
+      start: 2026-09-09 T0130
+      duration: PT60M
 version: 'vs20270801' #template version, remove before use
 ---
 
