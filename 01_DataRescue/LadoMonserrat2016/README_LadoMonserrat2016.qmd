@@ -73,16 +73,12 @@ timelog:
       description: finished methods section transcription.
       who: laylakalandjian 
       start: 2026-09-08 T1045
-<<<<<<< HEAD
       duration: PT45M
   - activity: 
       description: secondary methods section transcription.
       who: AmandaLopez14
       start: 2026-09-09 T0130
       duration: PT60M
-=======
-      duration: PT15M
->>>>>>> 28013cb46e61e62596da109bd76bd45fcbba1e91
 version: 'vs20270801' #template version, remove before use
 ---
 
