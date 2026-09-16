@@ -58,7 +58,6 @@ affiliations:
     url: https://mae.ufl.edu/
     
 timelog:
-  #remove activites below and add activites for the data rescue. Include one activity for developing the data rescue plan, each data element (table, figures, methods, bibliography), readme write-up, and anything else related to the data rescue.
   - activity:
       description: began data rescue plan and created github issue.
       who: laylakalandjian
@@ -73,12 +72,17 @@ timelog:
       description: finished methods section transcription.
       who: laylakalandjian 
       start: 2026-09-08 T1045
-      duration: PT45M
+      duration: PT15M
   - activity: 
       description: secondary methods section transcription.
       who: AmandaLopez14
       start: 2026-09-09 T0130
       duration: PT60M
+  - activity:
+      description: transcribed table 1.
+      who: laylakalandjian
+      start: 2026-09-16 T1415
+      duration: PT30M
 version: 'vs20270801' #template version, remove before use
 ---
 
@@ -98,8 +102,12 @@ library(bibtex) # reading in BibTex files to R
 
 # data files for level 0
 methods.file <- "LadoMonserrat2016_Methods.md"
-tableN.file <- 'LadoMonserrat2016_TableN.csv'
-figureM.file <- 'LadoMonserrat2016_FigureM.csv'
+table1.file <- 'LadoMonserrat2016_Table1.csv'
+table2.file <- 'LadoMonserrat2016_Table2.csv'
+table3.file <- 'LadoMonserrat2016_Table3.csv'
+table5.file <- 'LadoMonserrat2016_Table5.csv'
+figure3.file <- 'LadoMonserrat2016_Figure3.csv'
+figure4.file <- 'LadoMonserrat2016_Figure4.csv'
 
 # Bibliography files
 primaryCitation.file <- 'LadoMonserrat2016.bib'
@@ -178,7 +186,13 @@ These files are in the LadoMonserrat2016 data rescue.
   + citations for the methods section of the article
 - [LadoMonserrat2016_Methods.md](LadoMonserrat2016_Methods.md)
   + methods transcribed from primary article
-- [LadoMonserrat2016_TableN.csv](LadoMonserrat2016_TableN.csv)
+- [LadoMonserrat2016_Table1.csv](LadoMonserrat2016_Table1.csv)
+  + table N from primary article with ...
+- [LadoMonserrat2016_Table2.csv](LadoMonserrat2016_Table2.csv)
+  + table N from primary article with ...
+- [LadoMonserrat2016_Table3.csv](LadoMonserrat2016_Table3.csv)
+  + table N from primary article with ...
+- [LadoMonserrat2016_Table5.csv](LadoMonserrat2016_Table5.csv)
   + table N from primary article with ...
 - [temp/](temp/)
     + scratch folder that will not be archived on GitHub, it should include local copies of the data resource (likely a PDF article) and any spreadsheets or other tools you used for the transcriptions.
@@ -195,8 +209,10 @@ These files are in the LadoMonserrat2016 data rescue.
   - [x] Create a GitHub issue from the Data Rescue template and get feedback from a reviewer on the project (Dr Todd-Brown or a grad student typically).
   - [ ] Add the reviewer to the author list in the yml
 + Do
+  - [x] Create a spreadsheet with Table1 and export it to csv
   - [ ] Create a spreadsheet with Table2 and export it to csv
-  - [ ] Create a spreadsheet with Table4 and export it to csv
+  - [ ] Create a spreadsheet with Table3 and export it to csv
+    - [ ] Create a spreadsheet with Table5 and export it to csv
   - [ ] Extract points from Figure3 and export it to csv
   - [ ] Extract points from Figure4 and export it to csv
   - [x] Transcribe or copy the method section
