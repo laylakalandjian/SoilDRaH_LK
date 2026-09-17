@@ -4,7 +4,7 @@
 
 The study area is located closely to the *Alto de la Montalbana* (39°49'26"N; 1°05'47"W, 980 m a.s.l.) in Tuéjar, the province of Valencia, eastern Spain.
 The climate is Mediterranean type, with dry summers.
-According to data from the Titaguas station (832 m a.s.l.) for the 1960–1990 period, mean annual temperature is 12.5 °C and mean annual precipitation is 457 mm, with a minimum in summer of 45 mm (@PerezCueva1994).
+According to data from the Titaguas station (832 m a.s.l.) for the 1960-1990 period, mean annual temperature is 12.5 °C and mean annual precipitation is 457 mm, with a minimum in summer of 45 mm (@PerezCueva1994).
 The *P. halepensis* Mill. forest resulted from natural regeneration of abandoned agricultural fields.
 Mean tree age was 55 years when management treatments were applied (1998).
 The understory community is dominated by *Quercus coccifera*, *Juniperus oxycedrus*, *Juniperus phoenicea* and *Brachypodium retusum*, with the scant presence of suppressed *Quercus rotundifolia*.
@@ -31,7 +31,7 @@ Understory air temperature (1.5 m height) was also measured in the T0, T60 and T
 Rainfall was measured in the T100 plot of block II with a rainfall recorder (ECH2O rain, Decagon Devices).
 All the probes were attached to dataloggers (EM50, Decagon Devices), which recorded data at hourly intervals.
 The monthly temperature average and accumulated monthly precipitation values were obtained.
-The microclimatic variables were measured during the period covering October 2009–October 2011.
+The microclimatic variables were measured during the period covering October 2009-October 2011.
 
 ## Litter production
 
@@ -39,12 +39,12 @@ The litterfall traps used in this study were constructed with plastic boxes with
 These shallow boxes, which were deployed directly on the soil surface, were used to ensure also collecting the understory litterfall.
 Twelve traps were distributed randomly in each plot.
 Litterfall was collected monthly for 2 years, from November 2009 to October 2011.
-The material from each litter trap was sorted into six fractions: *needle, branch, bark, cone, other organs* and *miscellaneous* (other species than *P. halepensis*).
+The material from each litter trap was sorted into six fractions: *needle*, *branch*, *bark*, *cone*, *other organs* and *miscellaneous* (other species than *P. halepensis*).
 Samples were dried in the laboratory at 65 °C for 72 h and weighed.
 
 ## Litter decomposition
 
-Litterbags (15 × 20 cm<sup>2</sup)) were constructed with fibre glass mesh (1.5 mm mesh) and sewn with nylon.
+Litterbags (15 × 20 cm<sup>2</sup>) were constructed with fibre glass mesh (1.5 mm mesh) and sewn with nylon.
 The filling material, freshly fallen intact needles, was collected from the top of the OL layer in each block in July 2009 and was left to air dry in the laboratory.
 Next 180 litterbags were filled with 10 g of this material per block.
 In each plot, 45 bags were attached to the surface with metal pins at the beginning of October 2009, and three bags per plot were retrieved at 1, 2, 3, 4, 5, 6, 8, 10, 12, 14, 16, 18, 20, 22 and 24 months after being installed.
@@ -69,11 +69,12 @@ The P, K, Ca and Mg contents were determined by inductively coupled plasma optic
 ## Data analyses
 
 The returns of nutrients to soil through litterfall for 2010 were obtained by multiplying the corresponding mass production (kg ha<sup>-1</sup>) by the nutrient concentration (kg kg<sup>-1</sup>), and by adding up all months and fractions.
-In relation to needle decomposition, [@Olson1963] decay rate coefficients ($k$) were obtained as:
+
+In relation to needle decomposition, Olson's [@Olson1963] decay rate coefficients ($k$) were obtained as:
 
 $W_t = W_0e^{-kt}$
 
-where $t$ is time (year), $W_t$ is dry weight at time $t$ (g), $W_0$ is the initial dry weight (g) and $k$ the annual decay constant (year<sup>-1</sup>)
+where $t$ is time (year), $W_t$ is dry weight at time $t$ (g), $W_0$ is the initial dry weight (g) and $k$ the annual decay constant (year<sup>-1</sup>).
 
 The nutrients release from decomposing needles was also obtained as ([@Entry1991]):
 
@@ -84,8 +85,8 @@ where $N_t$ is the amount of nutrient released or absorbed at time $t$ (g/100g),
 The effects of block and silvicultural treatment on litterfall production, nutrient return via litterfall, needle-litter mass loss, decomposing needles moisture, the nutrient concentration of decomposing needles and nutrient release from decomposed needles were tested with repeated-measures ANOVAs, where time was the within-subject factor.
 In the litter decomposition variables, these differences were also tested for each date separately by two-way ANOVAs, where block and silvicultural treatment were the factors.
 Differences in the *needle* and *miscellaneous* litterfall nutrient concentrations on the summer production peak dates were analysed with three-way ANOVAs, with silvicultural treatment, block and year used as the factors.
-Differences in Olson’s $k$ values were analysed with a twoway ANOVA, where block and silvicultural treatment were the factors.
-In some cases, ln(x + 1) transformation was used to achieve homoscedasticity (Levene’s test) and approximate normality.
+Differences in Olson’s $k$ values were analysed with a two-way ANOVA, where block and silvicultural treatment were the factors.
+In some cases, $\ln(x+1)$ transformation was used to achieve homoscedasticity (Levene’s test) and approximate normality.
 When the ANOVAs indicated significant differences between silvicultural treatments, the Tukey’s HSD post hoc test was used.
 If Levene’s test indicated unequal variances of transformed data, then Tamhane’s T2 post hoc test was used.
 All the statistical analyses were performed with SPSS v. 16.
