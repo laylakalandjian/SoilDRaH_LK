@@ -144,8 +144,25 @@ timelog:
       end: 2026-11-08
       #start: YYYY-MM-DD THH:MM
       #alternatively duration can be combined with a being/end
-      duration: P15M
-version: 'vs202512' #template version, remove before use
+      duration: P15M 
+- activity: 
+      description: Methods.md
+      who: mbalvarez72 #github username
+      #when you started and ended, can be just a year or down to the minute
+      end: 2026-08-10
+      #start: YYYY-MM-DD THH:MM
+      #alternatively duration can be combined with a being/end
+      duration: P20M
+- activity: 
+      description: Figure 1
+      who: mbalvarez72 #github username
+      #when you started and ended, can be just a year or down to the minute
+      end: 2026-08-10
+      #start: YYYY-MM-DD THH:MM
+      #alternatively duration can be combined with a being/end
+      duration: P120M
+     
+duration: P10M      duration: P10Mversion: 'vs202512' #template version, remove before use
 ---
 
 
