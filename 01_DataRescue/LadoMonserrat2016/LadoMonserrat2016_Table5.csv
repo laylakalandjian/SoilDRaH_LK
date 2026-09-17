@@ -1,0 +1,12 @@
+﻿"**Table 5** Total nutrient return via litterfall in the year 2010 for each silvicultural treatment and the associated regression parameters
+<sup>a</sup> Mean values (standard deviation). Lower case letters denote post hoc significant differences (p < 0.05) for the factor silvicultural treatment in each nutrient. The block factor was not significant in any case
+<sup>b</sup> The parameters estimated for regression R = aBA + b, where R is the total yearly nutrient return (kg ha-1) and BA is the percentage of basal area removed by silvicultural treatments (%)",,,,,,,
+Label,Sublabel,C,N,P,K,Ca,Mg
+Return<sup>a</sup> (kg ha-1),T0,1376.8 +- 293.3a,15.62 +- 3.54a,0.54 +- 0.14a,2.90 +- 0.72a,24.30 +- 6.25a,2.96 +- 0.64a
+Return<sup>a</sup> (kg ha-1),T60,1001.7 +- 410.4b,11.72 +- 5.28b,0.42 +- 0.20ab,2.36 +- 1.50ab,17.93 +- 8.84b,1.96 +- 0.84b
+Return<sup>a</sup> (kg ha-1),T75,648.3 +- 347.5b,7.92 +- 4.18b,0.28 +- 16b,1.80 +- 1.27bc,11.21 +- 7.20b,1.31 +- 0.73b
+Return<sup>a</sup> (kg ha-1),T100,186.3 +- 178.9c,3.09 +- 2.95c,0.11 +- 0.10c,1.34 +- 1.22c,5.61 +- 4.91c,0.54 +- 0.48c
+Regr. parameters<sup>b</sup>,a,-11.429,-0.1203,-0.004,-0.0151,-0.1838,-0.0236
+Regr. parameters<sup>b</sup>,b,1464.5,16.55,0.57,2.98,25.39,3.06
+Regr. parameters<sup>b</sup>,r<sup>2</sup>,0.60,0.52,0.45,0.17,0.47,0.60
+Regr. parameters<sup>b</sup>,p,<0.0001,<0.0001,<0.0001<0.0001,<0.0001,<0.0001,<0.0001

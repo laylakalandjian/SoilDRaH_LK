@@ -88,6 +88,11 @@ timelog:
       who: laylakalandjian
       start: 2026-09-16 T1945
       duration: PT45M
+  - activity:
+      description: transcribed tables 3 and 5.
+      who: laylakalandjian
+      start: 2026-09-17 T1415
+      duration: PT30
 version: 'vs20270801' #template version, remove before use
 ---
 
