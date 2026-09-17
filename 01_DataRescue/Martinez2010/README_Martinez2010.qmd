@@ -145,7 +145,7 @@ timelog:
       #start: YYYY-MM-DD THH:MM
       #alternatively duration can be combined with a being/end
       duration: P15M 
-- activity: 
+  - activity: 
       description: Methods.md
       who: mbalvarez72 #github username
       #when you started and ended, can be just a year or down to the minute
@@ -153,7 +153,7 @@ timelog:
       #start: YYYY-MM-DD THH:MM
       #alternatively duration can be combined with a being/end
       duration: P20M
-- activity: 
+  - activity: 
       description: Figure 1
       who: mbalvarez72 #github username
       #when you started and ended, can be just a year or down to the minute
