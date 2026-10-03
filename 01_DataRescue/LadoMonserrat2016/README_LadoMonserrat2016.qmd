@@ -92,7 +92,17 @@ timelog:
       description: transcribed tables 3 and 5.
       who: laylakalandjian
       start: 2026-09-17 T1415
-      duration: PT30
+      duration: PT30M
+  - activity:
+      description: transcribed figure 4.
+      who: laylakalandjian
+      start: 2026-09-18 T2015
+      duration: PT60M
+  - activity:
+      description: finished transcribing figure 4.
+      who: laylakalandjian
+      start: 2026-10-03 T1445
+      duration: PT135M
 version: 'vs20270801' #template version, remove before use
 ---
 
@@ -220,9 +230,9 @@ These files are in the LadoMonserrat2016 data rescue.
   - [ ] Add the reviewer to the author list in the yml
 + Do
   - [x] Create a spreadsheet with Table1 and export it to csv
-  - [ ] Create a spreadsheet with Table2 and export it to csv
-  - [ ] Create a spreadsheet with Table3 and export it to csv
-    - [ ] Create a spreadsheet with Table5 and export it to csv
+  - [x] Create a spreadsheet with Table2 and export it to csv
+  - [x] Create a spreadsheet with Table3 and export it to csv
+  - [x] Create a spreadsheet with Table5 and export it to csv
   - [ ] Extract points from Figure3 and export it to csv
   - [ ] Extract points from Figure4 and export it to csv
   - [x] Transcribe or copy the method section
@@ -230,6 +240,7 @@ These files are in the LadoMonserrat2016 data rescue.
   - [ ] reformat equations and mathematical symbols as [LaTex](https://en.wikibooks.org/wiki/LaTeX/Mathematics)
   - [ ] reformat text using [Markdown](https://www.markdownguide.org/cheat-sheet/)
   - [ ] Create a bib file with the citations from the methods section
+  - [ ] Create a bib file with the citations from table 2
   - [ ] Push to your local fork and get a second transcription pushed to your local fork by someone else on the project
 + Measure
   - [ ] cross check with second transcriber for tables and methods, and resolve any differences
@@ -275,7 +286,7 @@ ggplot(data = plot.df,
 And is crosschecked with the secondary transcription (expected to be empty)
 
 ```{bash}
-#| label: compareTable1
+#| label: compareFigureN
 
 # You will want to repeat the line below to cross check each csv and md file in the
 #... data rescue. Having no lines flagged by this command will ensure that each character matches exactly.
@@ -312,13 +323,47 @@ read_csv(file = table1.file, #read in the specific file
 And is crosschecked with the secondary transcription (expected to be empty)
 
 ```{bash}
-#| label: compareTableN
+#| label: compareTable1
 
 # You will want to repeat the line below to cross check each csv and md file in the
 #... data rescue. Having no lines flagged by this command will ensure that each character matches exactly.
 #... Note that the template has an example of an unresolved conflict.
 
-diff --strip-trailing-cr --suppress-common-lines -y temp/LadoMonserrat2016_TableN_AC.csv LadoMonserrat2016_TableN.csv
+diff --strip-trailing-cr --suppress-common-lines -y temp/LadoMonserrat2016_Table1_AC.csv LadoMonserrat2016_Table1.csv
+```
+
+## Table 2
+
+Table 2 was modified by...
+
+```{r}
+#| label: table2Check
+
+
+read_csv(file = table2.file, #read in the specific file
+         skip = 1, #skip the first line with the caption
+         #read everything as a character, don't worry about formatting yet
+         col_types = cols(.default = col_character())) |>
+  kable(caption = read_csv(file = table2.file, #read in that file again but...
+                           n_max = 1, #only read the first line
+                           col_names = 'caption', #call it the caption
+                           #read everything as a character
+                           col_types = cols(.default = col_character()),
+                           show_col_types = FALSE #do not return messages
+                           )$caption #and take it out of the table
+  )
+```
+
+And is crosschecked with the secondary transcription (expected to be empty)
+
+```{bash}
+#| label: compareTable2
+
+# You will want to repeat the line below to cross check each csv and md file in the
+#... data rescue. Having no lines flagged by this command will ensure that each character matches exactly.
+#... Note that the template has an example of an unresolved conflict.
+
+diff --strip-trailing-cr --suppress-common-lines -y temp/LadoMonserrat2016_Table2_AC.csv LadoMonserrat2016_Table2.csv
 ```
 
 ## Methods
@@ -388,18 +433,26 @@ data.lvl0.ls <- list(
   #Read in the results as tables or figure transcriptions. This includes
   #...the caption as well as the tables themselves
   data = list(
-    TableN = list(
+    Table1 = list(
       #Read the caption as a text string. Captions are the first cell on 
       #...the first row.
-      caption = read_csv(file = tableN.file,
+      caption = read_csv(file = table1.file,
                          col_types = cols(.default = col_character()),
                          n_max = 1, col_names = FALSE)$X1[1],
       #Read in all the data, skipping the first row with the caption and read
       #...in the table as character. This element is a tibble (data.frame).
-      primary = read_csv(file = tableN.file,
+      primary = read_csv(file = table1.file,
                          col_types = cols(.default = col_character()),
                          skip = 1)
-    ), #End 'Table1' element
+    ), 
+    Table2 = list(
+      caption = read_csv(file = table2.file,
+                         col_types = cols(.default = col_character()),
+                         n_max = 1, col_names = FALSE)$X1[1],
+      primary = read_csv(file = table2.file,
+                         col_types = cols(.default = col_character()),
+                         skip = 1)
+    ),
     FigureM = list(
       #Read the caption as a text string. Captions are the first cell on 
       #...the first row.
