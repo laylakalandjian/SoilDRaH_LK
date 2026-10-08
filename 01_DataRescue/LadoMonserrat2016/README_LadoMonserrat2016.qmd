@@ -28,8 +28,15 @@ authors: #author scheme from https://quarto.org/docs/journals/authors.html
       - ref: uf-ees
     role: #TODO define these roles and add reference
       - transcription: secondary #secondary, review
-      - standardization:  #review
-      - curation: #review
+  - id: ktoddbrown 
+    name:
+      given: Katherine
+      family: Todd-Brown
+    orcid: 0000-0002-3109-8130
+    affiliation:
+      - ref: uf-ees
+    role: 
+      - transcription: review
 affiliations:
   - id: uf-ees
     name: University of Florida
@@ -234,7 +241,7 @@ These files are in the LadoMonserrat2016 data rescue.
   - [x] Create a spreadsheet with Table3 and export it to csv
   - [x] Create a spreadsheet with Table5 and export it to csv
   - [ ] Extract points from Figure3 and export it to csv
-  - [ ] Extract points from Figure4 and export it to csv
+  - [x] Extract points from Figure4 and export it to csv
   - [x] Transcribe or copy the method section
   - [ ] Insert references to bib entries
   - [ ] reformat equations and mathematical symbols as [LaTex](https://en.wikibooks.org/wiki/LaTeX/Mathematics)
