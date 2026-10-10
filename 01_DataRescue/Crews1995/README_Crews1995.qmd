@@ -57,6 +57,11 @@ timelog:
       who: laylakalandjian
       start: 2026-10-09 T1940
       duration: PT60M
+  - activity:
+      description: finished studyMeta and started Table1 reconfiguration.
+      who: laylakalandjian
+      start: 2026-10-10 T1530
+      duration: PT40M
     
 ---
 
@@ -357,11 +362,15 @@ The `of_variable` being used here are:
 #...associated with any table. Often this is study level information.
 
 studyMeta <- tribble(~of_variable, ~is_type, ~with_entry, ~from_source,
-                     #sampling info
+                    #sampling info
                    'soil_sampling', 'description', '2-4 study plots within a 1-ha area at each of the field sites', paste('Method ln5-8:', paste(data.lvl0.ls$method[5:8], collapse = ' ')),
                    'carbon_total', 'method', 'Carlo Erba C:H:N analyzer then multiplied by bulk densities and horizon depths', paste('Method ln56-62:', paste(data.lvl0.ls$method[56:62], collapse = ' ')),
-                   'depth', 'value', '50', paste('Method ln58:', paste(data.lvl0.ls$method[58], collapse = ' ')),
-                   'depth', 'unit', 'cm', paste('Method ln58:', paste(data.lvl0.ls$method[58], collapse = ' ')))
+                   'depth', 'value', '50', paste('Method ln49,58:', paste(data.lvl0.ls$method[49], data.lvl0.ls$method[58], collapse = ' ')),
+                   'depth', 'unit', 'cm', paste('Method ln58:', paste(data.lvl0.ls$method[58], collapse = ' ')),
+                   #study citation
+                   'citation', 'value', format(data.lvl0.ls$citation$primary), 'journal citation',
+                   'doi', 'value', data.lvl0.ls$citation$primary$doi, 'journal citation'
+                   )
 
 #### Table/Figure N ####
 # Process the primary data from Table/Figure M by maintaining data groups and 
@@ -373,28 +382,28 @@ Table1Primary <- data.lvl0.ls$data$Table1$primary |>
   #Add a row id preserving row grouping -- not unique
   mutate(row_id = paste0('R', 1:n())) |>
   #Transform the table to long data by row group and column names.
-  #...This allows us to then create the cross links between the tables.
   pivot_longer(cols = -row_id,
                names_to = 'column_name', values_to = 'with_entry',
                values_drop_na = TRUE) |> #drop missing values
   #Link the variable names to the column names using a switch statement
   mutate(of_variable = case_when(
-           #Soil PH is given as an example below
-           column_name == 'SOC' ~ 'soil_organic_carbon')) |>
-  #Flag the source of this data as Table 1, this table is merged later with
-  #...other data so this keeps track of where the data came from
+           column_name == 'Site' ~ 'region',
+           column_name == 'Parent material age (10<sup>3</sup> yr)' ~ 'parent_material_age',
+           column_name == 'Elevation (m)' ~ 'elevation',
+           column_name == 'Approx. mean annual temp. (°C)' ~ 'air_temperature',
+           column_name == 'Approx. mean annual precip. (mm)' ~ 'rainfall',
+           column_name == 'Soil classification' ~ 'soil_class',
+           column_name == 'Location' ~ 'region')) |>
+  #Flag the source of this data as Table 1
   mutate(from_source = 'Table 1')
 
 ## Create the metadata for table one from the header information and cited methods
 Table1Meta <- Table1Primary |>
   select(column_name, of_variable) |>
   unique() |>
-  #Grab everything between the parentheses as units and attribute the source as the column names.
   mutate(unit = str_extract(column_name, pattern = '(?<=\\().*(?=\\))'),
          from_source = 'Table 1 column names.') |>
-  #If there aren't units then drop the row
   filter(!is.na(unit)) |>
-  #Don't keep the column name now that you have the units, cross link via the variable
   select(-column_name) |>
   #Stack into the table the methods for each variable that we can find
   bind_rows(
