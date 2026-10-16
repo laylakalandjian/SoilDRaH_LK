@@ -387,7 +387,7 @@ Table1Primary <- data.lvl0.ls$data$Table1$primary |>
                values_drop_na = TRUE) |> #drop missing values
   #Link the variable names to the column names using a switch statement
   mutate(of_variable = case_when(
-           column_name == 'Site' ~ 'region',
+           column_name == 'Site' ~ 'site_id',
            column_name == 'Parent material age (10<sup>3</sup> yr)' ~ 'parent_material_age',
            column_name == 'Elevation (m)' ~ 'elevation',
            column_name == 'Approx. mean annual temp. (°C)' ~ 'air_temperature',
