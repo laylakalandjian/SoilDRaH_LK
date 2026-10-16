@@ -4,7 +4,7 @@ format:
   html:
     toc: true
     eval: true #if you want to not evaluate the chunks and just check the rendering, switch this to false
-date: last-modified
+date: 2026-10
 date-format: YYYY-MMMM
 bibliography:
   - LadoMonserrat2016_Methods.bib #contains the citations in the methods section
@@ -16,18 +16,16 @@ authors: #author scheme from https://quarto.org/docs/journals/authors.html
       family: Kalandjian
     affiliation:
       - ref: uf-ees
-    role: #TODO define these roles and add reference
-      - transcription: lead #secondary, review
-      - standardization: lead #review
-      - curation: lead #review
+    role: 
+      - transcription: lead
   - id: AmandaLopez14
     name:
       given: Amanda
       family: Lopez
     affiliation:
       - ref: uf-ees
-    role: #TODO define these roles and add reference
-      - transcription: secondary #secondary, review
+    role: 
+      - transcription: secondary 
   - id: ktoddbrown 
     name:
       given: Katherine
@@ -110,6 +108,11 @@ timelog:
       who: laylakalandjian
       start: 2026-10-03 T1445
       duration: PT135M
+  - activity:
+      description: started transcribing figure 3.
+      who: laylakalandjian
+      start: 2026-10-10 T1615
+      duration: PTM
 version: 'vs20270801' #template version, remove before use
 ---
 
@@ -216,11 +219,13 @@ These files are in the LadoMonserrat2016 data rescue.
 - [LadoMonserrat2016_Table1.csv](LadoMonserrat2016_Table1.csv)
   + table 1 from primary article with ...
 - [LadoMonserrat2016_Table2.csv](LadoMonserrat2016_Table2.csv)
-  + table N from primary article with ...
+  + table 2 from primary article with ...
 - [LadoMonserrat2016_Table3.csv](LadoMonserrat2016_Table3.csv)
-  + table N from primary article with ...
+  + table 3 from primary article with ...
 - [LadoMonserrat2016_Table5.csv](LadoMonserrat2016_Table5.csv)
-  + table N from primary article with ...
+  + table 5 from primary article with ...
+- [LadoMonserrat2016_Figure4.csv](LadoMonserrat2016_Figure4.csv)
+  + Figure 4 from primary article.
 - [temp/](temp/)
     + scratch folder that will not be archived on GitHub, it should include local copies of the data resource (likely a PDF article) and any spreadsheets or other tools you used for the transcriptions.
 
