@@ -112,7 +112,12 @@ timelog:
       description: started transcribing figure 3.
       who: laylakalandjian
       start: 2026-10-10 T1615
-      duration: PTM
+      duration: PT30M
+  - activity:
+      description: finished transcribing figure 3.
+      who: laylakalandjian
+      start: 2026-11-02 T1000
+      duration: PT120M
 version: 'vs20270801' #template version, remove before use
 ---
 
